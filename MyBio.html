@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h2 id="toc_0"><strong>1、个人信息</strong></h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">姓名：王燃鹏</th>
+<th style="text-align: center">年龄：27</th>
+<th style="text-align: center">性别：男</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">民族：汉</td>
+<td style="text-align: center">电话：15353735801</td>
+<td style="text-align: center">邮箱：deng_feng520@163.com</td>
+</tr>
+<tr>
+<td style="text-align: center">学历：大专</td>
+<td style="text-align: center">学校：西北大学软件职业技术学院</td>
+<td style="text-align: center">专业:计算机应用</td>
+</tr>
+<tr>
+<td style="text-align: center"><a href="http://www.jianshu.com/u/871c4bcb99f7">我的博客</a></td>
+<td style="text-align: center"><a href="https://github.com/dengfeng520">我的一些demo</a></td>
+<td style="text-align: center"></td>
+</tr>
+</tbody>
+</table>
+
+<p><img src="/Users/rp.wang/Downloads/IMG_3291.JPG" alt="个人信息"></p>
+
+<h2 id="toc_1"><strong>2、工作经历</strong></h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">时间</th>
+<th style="text-align: center">公司</th>
+<th style="text-align: center">岗位</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">2013年9月-2014年7月</td>
+<td style="text-align: center">西安思达典雅软件有限公司</td>
+<td style="text-align: center">Windows Phone实习、Unity 3D实习</td>
+</tr>
+<tr>
+<td style="text-align: center">2014年8月-2015年11月</td>
+<td style="text-align: center">西安讯点软件科技有限公司</td>
+<td style="text-align: center">iOS开发</td>
+</tr>
+<tr>
+<td style="text-align: center">2015年12月-至今</td>
+<td style="text-align: center">兰州北科维拓科技股份有限公司西安分公司</td>
+<td style="text-align: center">iOS开发</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_2"><strong>3、项目经验</strong></h2>
+
+<h3 id="toc_3">(1)、兰州北科维拓三维云办公</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰州北科维拓三维云办公iOS端</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2016年10月至今</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">由我公司自主研发的一个移动端办公的APP，主要功能有上下班打卡签退，可以建公司内部联系群，文件上传，日常申请审批等功能。</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我的主要工作是配合项目经理和产品经理在明确需求的条件下和同事一起完成iOS端一期、二期的独立开发，以及三期、四期合作的研发工作，目前第五期的研发的工作正在规划中。</td>
+</tr>
+<tr>
+<td style="text-align: center">个人心得</td>
+<td style="text-align: center">由于前期和总公司的一些沟通问题，导致前期的部分需求不是很明确，加上我在前期的开发中对整个框架的设计中采用的设计模式为MVVM模式，由于其他同事对该设计模式和风格的不熟悉，在后期频繁的版本迭代中，为了和后台的同时一起兼容旧版本，为自己和同事造成了一些不必要的工作量。为了增强代码的可维护性和可读性，后来在和产品经理和相关领导的沟通下，我将本项目框架重构，重新采用传统的MVC设计模式，此次项目让我学习到了：在研发工作中要考虑到各种原因，在项目研发初期的第三方框架和设计模式的选择上更应该慎重考虑。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E4%B8%89%E7%BB%B4%E4%BA%91%E5%8A%9E%E5%85%AC/id1091859648?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">管理员账号:18710640000 密码:123456   普通员工账号:15353735801 密码:123456</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_4">(2)、西安博信科技 校味学生端</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">西安博信科技 校味学生端</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2017年10月至今</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">为各个高校学生开发的一款App,规划的功能有学生查成绩、体测预约及成绩查询、评价教师、在线选课、在线考试、社区组织活动等。目前一期二期的开发工作主要有在线考试、体测预约及成绩查询功能。</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我主要负责一期和二期的开发、测试和维护工作</td>
+</tr>
+<tr>
+<td style="text-align: center">个人心得</td>
+<td style="text-align: center">在这个项目中，由于和甲方的思考角度存在差异，导致在一些功能的修改一直很被动。在项目中要多和甲方沟通交流，站在一个普通用户的角度来思考问题。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1302151809?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">账号:777777   密码:111111   账号:7891 密码：111111</td>
+</tr>
+<tr>
+<td style="text-align: center">备注</td>
+<td style="text-align: center">第一次登录时选择学校请选择 陕西省--&gt;西安电子科技大学 目前这个账号的数据是最全的</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_5">(3)、兰州北科维拓 兰雅集团 亲欣护工项目</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰雅集团 亲欣护工项目</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2017年</td>
+</tr>
+<tr>
+<td style="text-align: center">备注</td>
+<td style="text-align: center">该项目为黄骅兰雅集团开发，由于甲方验收没通过，目前未上线</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_6">(4)、兰州北科维拓 三维之家</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰州北科维拓三维之家物业端iOS端</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2016年</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E4%B8%89%E7%BB%B4%E4%B9%8B%E5%AE%B6%E7%89%A9%E4%B8%9A%E7%AB%AF/id1152872223?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">账号:zd001   密码:456789</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_7">(5)、兰州北科维拓 驻村工作队</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰州北科维拓 驻村工作队项目iOS端</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2016年至今</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">为甘肃省驻村代表开发的一款办公APP</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我主要负责一期、二期的开发以及维护工作</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E4%B8%89%E7%BB%B4%E4%BA%91%E5%8A%9E%E5%85%AC/id1302151809?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">账号:18329934400   密码:123456</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_8">(6)、兰州北科维拓 两学一做</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰州北科维拓 两学一做项目iOS端</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2015年12月--2016年</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E4%B8%A4%E5%AD%A6%E4%B8%80%E5%81%9A/id1119475732?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">登录账号:13572406964   密码:123456    账号:15291576754  密码:123456</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_9">(7)、兰州北科维拓 公培博视</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰州北科维拓 公培博视项目iOS端</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">公培博视是兰州干部培训学习用于课程培训的APP</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我主要公培博视项目iOS端一期、二期的开发维护工作</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2016年</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E5%85%AC%E5%9F%B9%E5%8D%9A%E8%A7%86/id1063634116?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_10">(8)、兰州北科维拓 三维城市项目</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">兰州北科维拓 三维城市项目iOS端三期四期的开发工作</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2015年12月--2016年3月</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我主要负责二期、三期的开发和维护工作</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/%E9%BB%84%E9%AA%85%E4%B8%89%E7%BB%B4%E5%9F%8E%E5%B8%82/id1120465689?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">登录账号:18192398768   密码:123456</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_11">(9)、西安讯点 白云E洗项目</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">讯点白云E洗项目</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2015年</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">主要负责项目的开发、测试工作。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/lian-chuang-sheng-bang/id1098100192?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">备注</td>
+<td style="text-align: center">由于讯点公司开发者账号到期，该APP目前已下架</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_12">(10)、西安讯点 中盟拓海项目</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">西安讯点 中盟拓海项目</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2015年</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">为房产中介公司的顾问、专员开发的APP。</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">根据甲方需求完成开发工作、测试、修改以及后期的维护工作。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/cn/app/bai-yune-xi/id1033724315?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">备注</td>
+<td style="text-align: center">由于讯点公司开发者账号到期，该APP目前已下架</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_13">(11)、西安讯点 世纪金花爱金花电商平台</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">讯点世纪金花爱金花电商平台</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2015年03月--2015年7月</td>
+</tr>
+<tr>
+<td style="text-align: center">测试账号</td>
+<td style="text-align: center">登录账号:18192398768     密码:w1314520</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">这是西安世纪金花所做的一个电商交易平台，电商平台所实现的所有功能都有，开发语言为swift 1.0。我所在团队主要负责iOS端 1.0版本2.0版本的开发工作。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/us/app/ai-jin-hua/id953833070?l=zh&amp;ls=1&amp;mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_14">(12)、西安讯点 沈阳同校卖</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">沈阳同校卖</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2015年</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">该项目旨在为高校学生创造一个线下交易平台，分为四个模块，同校，分类，发现，我的。试运维地点为沈阳。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/us/app/tong-xiao-mai/id967853149?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+<tr>
+<td style="text-align: center">备注</td>
+<td style="text-align: center">由于讯点公司开发者账号到期，该APP目前已下架</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_15">(13)、西安思达典雅  COCOAR</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">Startialab Co.,Ltd. COCOAR</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2014年-2015年</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">西安思达典雅为日本思达典雅株式会社开发的一款AR的APP，SDK使用的是高通Vuforia SDK，云端服务器用的是亚马逊AWS。支持语言有：简体中文，繁体中文，日本语。</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我主要负责把Unity 3D打包给Windows、Android、iOS的同事调用，并在技术组长的协助下完成Unity 3d与各个平台之间的交互工作.</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/us/app/cocoar/id571606059?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_16">(13)、西安思达典雅  ActiBook Docs</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">项目</th>
+<th style="text-align: center">内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">项目名称</td>
+<td style="text-align: center">Startialab Co.,Ltd. ActiBook Docs</td>
+</tr>
+<tr>
+<td style="text-align: center">研发时间</td>
+<td style="text-align: center">2014年</td>
+</tr>
+<tr>
+<td style="text-align: center">项目简介</td>
+<td style="text-align: center">西安思达典雅为日本思达典雅株式会社开发的一款电子书阅读器，支持PDF，falsh，HTML等格式的电子书。支持语言有：简体中文，繁体中文，日本语。</td>
+</tr>
+<tr>
+<td style="text-align: center">负责任务</td>
+<td style="text-align: center">我主要负责Windows Phone的维护和在组长协助下完成新功能的开发工作。</td>
+</tr>
+<tr>
+<td style="text-align: center">App Store</td>
+<td style="text-align: center"><a href="https://itunes.apple.com/us/app/actibook-docs/id767336990?mt=8">App Strore上线地址,下载请戳这里</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_17"><strong>4、个人评价</strong></h2>
+
+<p>个人比较爱学习技术方面的知识，前端方面目前个人觉得自己在技术上不存在太大的问题，主要是对项目整体业务逻辑以及框架设计方面有待提高。
+目前在自学Java后台，暂时写增删改查可以，做项目还要学一段时间。
+其他方面比较喜欢经济类和文学类方面的书和博客。</p>
+
+<p>可以加我的微信聊:</p>
+
+<p><img src="/Users/rp.wang/Desktop/BDB2435F-3C5A-4065-8395-B74D3821DCBB.png" alt=""></p>
+
+
+
+
+</body>
+
+</html>
