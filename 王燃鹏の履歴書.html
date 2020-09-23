@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>王燃鹏の履歴書</title><link href='file://night/mermaid.dark.css' rel='stylesheet' type='text/css' /><link href='file://night/codeblock.dark.css' rel='stylesheet' type='text/css' /><link href='file://night/sourcemode.dark.css' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+<title>王燃鹏の履歴書</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
 iframe { margin: auto; }
@@ -24,14 +24,14 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
-img { max-width: 100%; vertical-align: middle; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
 button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
 p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
@@ -47,7 +47,7 @@ sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); 
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
+figure > table { margin: 0px; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
@@ -82,17 +82,19 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print { 
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   html.blink-to-pdf { font-size: 13px; }
   .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
   .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
 pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
@@ -564,14 +566,10 @@ g.classGroup line {
   fill: #eee;
 }
 
-.slice {
-   }
-
 g.stateGroup text {
-  fill: #eee;
   stroke: none;
   font-size: 10px;
-   }
+}
 
 g.stateGroup circle {
   fill: white !important;
@@ -617,9 +615,75 @@ g.stateGroup line {
   fill: black;
   font-size: 10px;
   font-weight: bold;
-   }
+}
 
-;
+.cluster-label {
+  color:black;
+}
+
+.statediagram-cluster rect {
+  fill: #BDD5EA;
+  stroke: #9370DB; 
+  stroke-width: 1px;
+}
+.statediagram-cluster rect.outer {
+  rx: 5px;
+  ry: 5px;
+}
+.statediagram-state .divider {
+  stroke: #9370DB; 
+}
+
+.statediagram-state .title-state {
+  rx: 5px;
+  ry: 5px;
+}
+.statediagram-cluster.statediagram-cluster .inner {
+  fill: white;
+}
+.statediagram-cluster.statediagram-cluster-alt .inner {
+  fill: #e0e0e0;
+}
+
+.statediagram-cluster .inner {
+  rx:0;
+  ry:0;
+}
+
+.statediagram-state rect.basic {
+  rx: 5px;
+  ry: 5px;
+}
+.statediagram-state rect.divider {
+  stroke-dasharray: 10,10;
+  fill: #efefef;
+}
+
+.note-edge {
+  stroke-dasharray: 5;
+}
+
+.statediagram-note rect {
+  stroke: var(--cluster-border);
+  fill: #fff5ad;
+  stroke-width: 1px;
+  rx: 0;
+  ry: 0;
+}
+
+.node circle.state-start {
+  fill: black;
+  stroke: black;
+}
+.node circle.state-end {
+  fill: black;
+  stroke: white;
+  stroke-width: 1.5
+}
+#statediagram-barbEnd {
+  fill: #9370DB; 
+}
+
 /* CSS Document */
 
 /** code highlight */
@@ -732,7 +796,7 @@ g.stateGroup line {
 .CodeMirror-gutters {
     border-right: none;
 }
-;
+
 /* CSS Document */
 
 /** markdown source **/
@@ -816,6 +880,19 @@ body {
 
 #write {
     max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
 }
 
 html,
@@ -1760,6 +1837,6 @@ footer.ty-footer {
 </style>
 </head>
 <body class='typora-export' >
-<div  id='write'  class = 'is-mac'><h2><a name="1个人信息" class="md-header-anchor"></a><strong><span>1、个人信息</span></strong></h2><figure><table><thead><tr><th style='text-align:center;' ><span>姓名：王燃鹏</span></th><th style='text-align:center;' ><span>年龄：27</span></th><th style='text-align:center;' ><span>应聘职位：iOS开发工程师 VUE前端开发</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>民族：汉</span></td><td style='text-align:center;' ><span>电话：65a4b4e00c7e70152182189c673bc93b （MD5）</span></td><td style='text-align:center;' ><span>邮箱：</span><a href='mailto:deng_feng520@163.com' target='_blank' class='url'>deng_feng520@163.com</a></td></tr><tr><td style='text-align:center;' ><span>学校</span></td><td style='text-align:center;' ><span>西北大学软件技术学院</span></td><td style='text-align:center;' ><span>专业：计算机应用</span></td></tr><tr><td style='text-align:center;' ><span>其他</span></td><td style='text-align:center;' ><a href='http://www.jianshu.com/u/871c4bcb99f7'><span>我的博客</span></a></td><td style='text-align:center;' ><a href='https://github.com/dengfeng520?tab=repositories'><span>开源代码</span></a></td></tr></tbody></table></figure><h2><a name="2个人评价" class="md-header-anchor"></a><strong><span>2、个人评价</span></strong></h2><ul><li><span>良好的编码风格，在编写代码时以《Clearn Code》上的建议和标准作为自己的编写代码准则；</span></li><li><span>掌握iOS开发中大部分知识体系，熟悉iOS App的开发、测试、发布一系列的流程；</span></li><li><span>熟练使用Swift以及Swift的面向协议(接口)编程思想；</span></li><li><span>熟练使用前端常见的MVC、MVP、MVVM、等设计模式，熟悉Objective-C内存管理机制，熟悉Objective-C的Runtime运行机制；</span></li><li><span>熟练掌握常用的第三方框架及其原理，熟练使用GitHub命令行代码管理；</span></li><li><span>掌握SQLite、Realm的数据库操作；</span></li><li><span>了解</span><a href='https://flutter.dev/docs'><span>Flutter</span></a><span>及其和原生混编；</span></li><li><span>较强的学习能力和学习激情在做好本职工作的同时不断学习新的技术和思想；</span></li></ul><h2><a name="3工作经历" class="md-header-anchor"></a><strong><span>3、工作经历</span></strong></h2><figure><table><thead><tr><th style='text-align:center;' ><span>时间</span></th><th style='text-align:center;' ><span>公司</span></th><th style='text-align:center;' ><span>岗位</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>2019年7月至今</span></td><td style='text-align:center;' ><span>北京体适能体育科技有限公司</span></td><td style='text-align:center;' ><span>iOS开发、VUE前端开发 、用户培训、售后技术支持</span></td></tr><tr><td style='text-align:center;' ><span>2017年12月-2019年6月</span></td><td style='text-align:center;' ><span>西安乐推网络信息科技有限公司</span></td><td style='text-align:center;' ><span>iOS开发、SDK开发</span></td></tr><tr><td style='text-align:center;' ><span>2015年8月-2017年12月</span></td><td style='text-align:center;' ><span>兰州北科维拓科技股份有限公司</span></td><td style='text-align:center;' ><span>ASP.Net开发，iOS开发</span></td></tr><tr><td style='text-align:center;' ><span>2014年9月-2015年7月</span></td><td style='text-align:center;' ><span>西安思达典雅软件有限公司</span></td><td style='text-align:center;' ><span>Windows Phone实习,Unity 3D实习</span></td></tr></tbody></table></figure><h2><a name="4项目经验" class="md-header-anchor"></a><strong><span>4、项目经验</span></strong></h2><h3><a name="1体适能学生端" class="md-header-anchor"></a><span>(1)、体适能学生端</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>体适能学生端</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2019年7月至今</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>为各个高校学生开发的一款App,规划的功能有学生查成绩、体测预约及成绩查询、评价教师、在线选课、在线考试、社区组织活动等。截止19年12月，该项目Android+iOS下载量超过600K+。</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>1、开发、测试和维护工作；2、和部分学校老师对接，及时了解新需求后同公司商务团队和开发团队沟通和交流这些新的需求；3、对部分老师我司系统使用做培训工作。4、负责编写我司系统使用文档。</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1302151809?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:7891 密码：654321</span></td></tr><tr><td style='text-align:center;' ><span>备注</span></td><td style='text-align:center;' ><span>第一次登录时选择学校请选择 测试--&gt;演示系统</span></td></tr></tbody></table></figure><h3><a name="2体适能教师" class="md-header-anchor"></a><span>(2)、体适能教师</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>体适能教师</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>209年7月至今</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1299638135?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:0592 密码：654321</span></td></tr><tr><td style='text-align:center;' ><span>备注</span></td><td style='text-align:center;' ><span>第一次登录时选择学校请选择 测试--&gt;演示系统</span></td></tr></tbody></table></figure><h3><a name="3开源项目-仿oneapp" class="md-header-anchor"></a><span>(3)、开源项目 仿&quot;One&quot;App</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>仿&quot;One&quot;App</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>仿One App，通过抓包拿到原App接口，然后用Swift开发了&quot;One&quot; App 部分功能。</span></td></tr><tr><td style='text-align:center;' ><span>代码地址</span></td><td style='text-align:center;' ><a href='https://github.com/dengfeng520/OneSwift'><span>开源代码</span></a></td></tr></tbody></table></figure><h3><a name="4囧家家" class="md-header-anchor"></a><span>(4)、囧家家</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>囧家家</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2019年9月至今</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>一个线上线下配合的平台，类似于京东到家。使用Swift 开发。</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1477462596?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr></tbody></table></figure><h3><a name="5启天星办公系统ios端" class="md-header-anchor"></a><span>(5)、启天星办公系统iOS端</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>启天医星办公系统iOS端。使用Swift 开发。</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2019年10月至今</span></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:20018 密码：123456</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1477462596?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr></tbody></table></figure><h3><a name="6）appcpi-catchu" class="md-header-anchor"></a><span>（6）、Appcpi catchu!</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>Appcpi catchu!</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2018年7月至2019年07月</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>由我公司自主研发的视频交友APP，类似于tiki，玩洽，主要面向北美市场</span></td></tr><tr><td style='text-align:center;' ><span>工作任务</span></td><td style='text-align:center;' ><span>负责1.0版本探索模块和2.0版本话题模块的开发、测试以及维护工作</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E4%B8%89%E7%BB%B4%E4%BA%91%E5%8A%9E%E5%85%AC/id1436463146?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>备注</span></td><td style='text-align:center;' ><span>该App因竞争对手举报，目前已下架</span></td></tr></tbody></table></figure><h3><a name="7）appcpi-游戏端登录内购sdk" class="md-header-anchor"></a><span>（7）、Appcpi 游戏端登录内购SDK</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>时间</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>2018年12月至今</span></td><td style='text-align:center;' ><span>Appcpi 登录及内购iOS SDK</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>为我公司游戏研发部开发的登录和内购SDK，集成了Google、Facebook、Twitter、等第三方登录方式供游戏研发部的同事调用。同时加入了苹果内购等功能。</span></td></tr><tr><td style='text-align:center;' ><span>工作任务</span></td><td style='text-align:center;' ><span>配合游戏部门的同事，负责开发、集成、文档编写以及后期和游戏部门同事的对接工作。</span></td></tr><tr><td style='text-align:center;' ><span>使用文档</span></td><td style='text-align:center;' ><a href='https://dengfeng520.github.io/LTSDKDocument/iOS%E6%94%AF%E4%BB%98%E6%A8%A1%E5%9D%97%E6%96%87%E6%A1%A3.html'><span>支付文档</span></a><span>and</span><a href='https://dengfeng520.github.io/LTSDKDocument/LTGameSDK%E7%99%BB%E5%BD%95%E6%96%87%E6%A1%A3.html'><span>登录文档</span></a></td></tr></tbody></table></figure><h3><a name="8兰州北科维拓--三维云办公" class="md-header-anchor"></a><span>(8)、兰州北科维拓  三维云办公</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>兰州北科维拓三维云办公iOS端</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2016年10月至208年7月</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>由我公司自主研发的一个移动端办公的APP，主要功能有上下班打卡签退，可以建公司内部联系群，文件上传，日常申请审批等功能。</span></td></tr><tr><td style='text-align:center;' ><span>工作任务</span></td><td style='text-align:center;' ><span>我的主要工作是配合项目经理和产品经理在明确需求的条件下和同事一起完成iOS端一期、二期的独立开发，以及三期、四期合作的研发工作。</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E4%B8%89%E7%BB%B4%E4%BA%91%E5%8A%9E%E5%85%AC/id1091859648?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>管理员账号:15353660000 密码:123456   普通员工账号:15353660001 密码:123456</span></td></tr></tbody></table></figure><h3><a name="9兰州北科维拓--三维之家" class="md-header-anchor"></a><span>(9)、兰州北科维拓  三维之家</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>兰州北科维拓三维之家物业端iOS端</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2016年</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E4%B8%89%E7%BB%B4%E4%B9%8B%E5%AE%B6%E7%89%A9%E4%B8%9A%E7%AB%AF/id1152872223?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:zd001   密码:456789</span></td></tr></tbody></table></figure><h3><a name="10兰州北科维拓--驻村工作队" class="md-header-anchor"></a><span>(10)、兰州北科维拓  驻村工作队</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>兰州北科维拓 驻村工作队项目iOS端</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2016年</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>为甘肃省驻村代表开发的一款办公APP</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>我主要负责一期、二期的开发以及维护工作</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E9%A9%BB%E6%9D%91%E5%B7%A5%E4%BD%9C%E9%98%9F/id1131551523?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:zd001   密码:123456</span></td></tr></tbody></table></figure><h3><a name="11兰州北科维拓--两学一做" class="md-header-anchor"></a><span>(11)、兰州北科维拓  两学一做</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>兰州北科维拓 两学一做项目iOS端</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2015年--2016年</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E4%B8%A4%E5%AD%A6%E4%B8%80%E5%81%9A/id1119475732?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>登录账号:13572406964   密码:123456    账号:15291576754  密码:123456</span></td></tr></tbody></table></figure><h3><a name="12兰州北科维拓--公培博视" class="md-header-anchor"></a><span>(12)、兰州北科维拓  公培博视</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>兰州北科维拓 公培博视项目iOS端</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>公培博视是兰州干部培训学习用于课程培训的APP</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>我主要公培博视项目iOS端一期、二期的开发维护工作</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2016年</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E5%85%AC%E5%9F%B9%E5%8D%9A%E8%A7%86/id1063634116?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr></tbody></table></figure><h3><a name="13兰州北科维拓--三维城市项目" class="md-header-anchor"></a><span>(13)、兰州北科维拓  三维城市项目</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>兰州北科维拓 三维城市项目iOS端三期四期的开发工作</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2015年12月--2016年3月</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>我主要负责二期、三期的开发和维护工作</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E9%BB%84%E9%AA%85%E4%B8%89%E7%BB%B4%E5%9F%8E%E5%B8%82/id1120465689?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>登录账号:18192398768   密码:123456</span></td></tr></tbody></table></figure><h3><a name="14兰州北科维拓--世纪金花电商平台" class="md-header-anchor"></a><span>(14)、兰州北科维拓  世纪金花电商平台</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>讯点世纪金花爱金花电商平台</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2015年03月--2015年7月</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>这是西安世纪金花所做的一个电商交易平台，电商平台所实现的所有功能都有，开发语言为swift 。我所在团队主要负责iOS端 1.0版本2.0版本的开发工作。</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E7%88%B1%E9%87%91%E8%8A%B1/id951449664?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr></tbody></table></figure><h3><a name="15西安思达典雅--cocoar-windows-phone版" class="md-header-anchor"></a><span>(15)、西安思达典雅  COCOAR Windows Phone版</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>Startialab Co.,Ltd. COCOAR Windows Phone版</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2014年-2015年</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>西安思达典雅为日本思达典雅株式会社开发的一款AR的APP，SDK使用的是高通Vuforia SDK，云端服务器用的是亚马逊AWS。支持语言有：简体中文，繁体中文，日本语。</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>我主要负责把Unity 3D打包给Windows、Android、iOS的同事调用，并在技术组长的协助下完成Unity 3d与各个平台之间的交互工作.</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/cocoar/id571606059?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr></tbody></table></figure><h3><a name="16西安思达典雅--actibook-docs-windows-phone版" class="md-header-anchor"></a><span>(16)、西安思达典雅  ActiBook Docs Windows Phone版</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>Startialab Co.,Ltd. ActiBook Docs Windows Phone版</span></td></tr><tr><td style='text-align:center;' ><span>研发时间</span></td><td style='text-align:center;' ><span>2014年</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>西安思达典雅为日本思达典雅株式会社开发的一款电子书阅读器，支持PDF，falsh，HTML等格式的电子书。支持语言有：简体中文，繁体中文，日本语。</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>我主要负责Windows Phone的维护和在组长协助下完成新功能的开发工作。</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/developer/startialab-co-ltd/id373073803?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr></tbody></table></figure><p>&nbsp;</p></div>
+<div  id='write'  class = ''><h2><a name="1个人信息" class="md-header-anchor"></a><strong><span>1、个人信息</span></strong></h2><figure><table><thead><tr><th style='text-align:center;' ><span>姓名：王燃鹏</span></th><th style='text-align:center;' ><span>年龄：27</span></th><th style='text-align:center;' ><span>应聘职位：iOS开发工程师 VUE前端开发</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>民族：汉</span></td><td style='text-align:center;' ><span>电话：65a4b4e00c7e70152182189c673bc93b （MD5）</span></td><td style='text-align:center;' ><span>邮箱：</span><a href='mailto:deng_feng520@163.com' target='_blank' class='url'>deng_feng520@163.com</a></td></tr><tr><td style='text-align:center;' ><span>学校</span></td><td style='text-align:center;' ><span>西北大学软件技术学院</span></td><td style='text-align:center;' ><span>专业：计算机应用</span></td></tr><tr><td style='text-align:center;' ><span>其他</span></td><td style='text-align:center;' ><a href='http://www.jianshu.com/u/871c4bcb99f7'><span>我的博客</span></a></td><td style='text-align:center;' ><a href='https://github.com/dengfeng520?tab=repositories'><span>开源代码</span></a></td></tr></tbody></table></figure><h2><a name="2个人评价" class="md-header-anchor"></a><strong><span>2、个人评价</span></strong></h2><ul><li><span>熟练运用Objective-C/Swift语言，具有良好的编码风格和高度负责的功能能力；</span></li><li><span>掌握iOS开发中大部分知识体系，熟悉iOS App的开发、测试、发布一系列的流程；</span></li><li><span>熟练使用前端常见的MVC、MVP、MVVM、等设计模式，熟悉Objective-C内存管理机制，熟悉Objective-C的Runtime运行机制；</span></li><li><span>熟练掌握常用的第三方框架及其原理，熟练使用GitHub、SVN命令行代码管理；</span></li><li><span>了解</span><a href='https://flutter.dev/docs'><span>Flutter</span></a><span>及其和原生混编；</span></li><li><span>较强的学习能力和学习激情在做好本职工作的同时不断学习新的技术和思想；</span></li></ul><h2><a name="3工作经历" class="md-header-anchor"></a><strong><span>3、工作经历</span></strong></h2><figure><table><thead><tr><th style='text-align:center;' ><span>时间</span></th><th style='text-align:center;' ><span>公司</span></th><th style='text-align:center;' ><span>岗位</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>2019年7月至今</span></td><td style='text-align:center;' ><span>北京体适能体育科技有限公司</span></td><td style='text-align:center;' ><span>iOS开发、VUE前端开发 、用户培训、售后技术支持</span></td></tr><tr><td style='text-align:center;' ><span>2017年12月-2019年6月</span></td><td style='text-align:center;' ><span>西安乐推网络信息科技有限公司</span></td><td style='text-align:center;' ><span>iOS开发、SDK开发</span></td></tr><tr><td style='text-align:center;' ><span>2015年8月-2017年12月</span></td><td style='text-align:center;' ><span>兰州北科维拓科技股份有限公司</span></td><td style='text-align:center;' ><span>ASP.Net开发，iOS开发</span></td></tr><tr><td style='text-align:center;' ><span>2014年9月-2015年7月</span></td><td style='text-align:center;' ><span>西安思达典雅软件有限公司</span></td><td style='text-align:center;' ><span>Windows Phone实习,Unity 3D实习</span></td></tr></tbody></table></figure><h2><a name="4近期项目" class="md-header-anchor"></a><strong><span>4、近期项目</span></strong></h2><h3><a name="1开源项目-rpchat" class="md-header-anchor"></a><span>(1)、开源项目 RPChat</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>RPChat</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>基于RXSwift构建的一个简单的聊天APP</span></td></tr><tr><td style='text-align:center;' ><span>代码地址</span></td><td style='text-align:center;' ><a href='https://github.com/dengfeng520/RPChat'><span>开源代码</span></a></td></tr></tbody></table></figure><h3><a name="2开源项目-仿oneapp" class="md-header-anchor"></a><span>(2)、开源项目 仿&quot;One&quot;App</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>仿&quot;One&quot;App</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>仿One App，通过抓包拿到原App接口，用Swift开发了&quot;One&quot; App 部分功能。</span></td></tr><tr><td style='text-align:center;' ><span>代码地址</span></td><td style='text-align:center;' ><a href='https://github.com/dengfeng520/OneSwift'><span>开源代码</span></a></td></tr></tbody></table></figure><h3><a name="3体适能学生端" class="md-header-anchor"></a><span>(3)、体适能学生端</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>体适能学生端</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>为各个高校学生开发的一款App,规划的功能有学生查成绩、体测预约及成绩查询、评价教师、在线选课、在线考试、社区组织活动等。截止2020年8月，该项目Android+iOS下载量超过70W。</span></td></tr><tr><td style='text-align:center;' ><span>负责任务</span></td><td style='text-align:center;' ><span>1、开发、测试和维护工作；2、和部分学校老师对接，及时了解新需求后同公司商务团队和开发团队沟通和交流这些新的需求；3、对部分老师我司系统使用做培训工作。4、负责编写我司系统使用文档。</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1302151809?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:7891 密码：654321</span></td></tr><tr><td style='text-align:center;' ><span>备注</span></td><td style='text-align:center;' ><span>第一次登录时选择学校请选择 测试--&gt;演示系统</span></td></tr></tbody></table></figure><h3><a name="4体适能教师" class="md-header-anchor"></a><span>(4)、体适能教师</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>体适能教师</span></td></tr><tr><td style='text-align:center;' ><span>App Store</span></td><td style='text-align:center;' ><a href='https://itunes.apple.com/cn/app/%E6%A0%A1%E5%91%B3/id1299638135?mt=8'><span>App Store上线地址,下载请戳这里</span></a></td></tr><tr><td style='text-align:center;' ><span>测试账号</span></td><td style='text-align:center;' ><span>账号:0592 密码：654321</span></td></tr><tr><td style='text-align:center;' ><span>备注</span></td><td style='text-align:center;' ><span>第一次登录时选择学校请选择 测试--&gt;演示系统</span></td></tr></tbody></table></figure><h3><a name="5catchu" class="md-header-anchor"></a><span>(5)、Catchu!</span></h3><figure><table><thead><tr><th style='text-align:center;' ><span>项目</span></th><th style='text-align:center;' ><span>内容</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>项目名称</span></td><td style='text-align:center;' ><span>Catchu</span></td></tr><tr><td style='text-align:center;' ><span>项目简介</span></td><td style='text-align:center;' ><span>一对一视频交友类App，类似于</span><strong><span>玩恰</span></strong><span>，主要负责视频匹配，个人中心，IM模块的开发，测试，以及App的发布维护工作。</span></td></tr></tbody></table></figure><p>&nbsp;</p></div>
 </body>
 </html>
