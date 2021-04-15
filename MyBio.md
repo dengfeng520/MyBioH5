@@ -6,7 +6,7 @@
 * E-mail: deng_feng520@163.com  
 * Blog: [小时光のホームページ ](https://dengfeng520.github.io/)  、[简书](https://www.jianshu.com/u/871c4bcb99f7)、 [掘金](https://juejin.cn/user/3386151544558525/posts)
 * Github: [dengfeng520](https://github.com/dengfeng520)
-* Graduate institution: 西北大学软件职业技术学院
+* Graduate institution: 西北大学 
 
 ## **2、What skills do me have?**
 
